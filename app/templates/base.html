@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="title" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    {% block head %}{% endblock %}
+</head>
+
+<body>
+    <div id="nav-bar">
+        <ul class="nav">
+            <li>
+                <a href="{{  url_for('home')  }}" class="nav-tile">Home</a>
+            </li>
+        </ul>
+    </div>
+
+    <!--Contains All Content Tiles-->
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer></footer>
+
+    <script src="{{ url_for('static', filename='js/base.js') }}" defer></script>
+</body>
+
+</html>
