@@ -37,6 +37,13 @@ To get started, follow these steps:
 
     The server will start running, and you can access the application by navigating to `http://localhost:5000` in your web browser.
 
+## Resources
+
+[Demystifying Flask’s “Application Factory”](https://hackersandslackers.com/flask-application-factory/)  
+[User Session Data with Flask-Session & Redis](https://hackersandslackers.com/flask-user-sessions-and-redis/)  
+[Configuring Your Flask App](https://hackersandslackers.com/configure-flask-applications/)  
+[Configuration Handling](https://flask.palletsprojects.com/en/3.0.x/config/#configuration-handling)
+
 ## License
 
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT) - see the [LICENSE](LICENSE) file for details.
