@@ -13,22 +13,58 @@
 </head>
 
 <body>
-    <div id="nav-bar">
-        <ul class="nav">
-            <li>
-                <a href="{{  url_for('home')  }}" class="nav-tile">Home</a>
-            </li>
-        </ul>
-    </div>
+        <div>
+            <!--Main Navigation Tile-->
+            <div id="nav-bar">
+                <ul class="nav">
+                    <li><a href="{{  url_for('main.index')  }}" class="dropbtn nav-tile {% if nav_id == 'home-page' %}active{% endif %}">Home</a></li>
+                    <li><div class="{% if nav_id == 'users-page' %}active{% endif %}">
+                        <!--User Sub Navigation-->
+                        <div class="dropbtn nav-tile">Users</div>
+                        <div class="dropdown-element" style="display: none;">
+                            <!-- ADD USER ELEMENTS HERE -->
+                            <a class="drop-link" href="{{  url_for('users.index')  }}">User Page 1</a>
+                            <a class="drop-link" href="{{  url_for('users.index')  }}">User Page 2</a>
+                            <a class="drop-link" href="{{  url_for('users.index')  }}">User Page 3</a>
+                        </div>
+                    </div></li>
+                </ul>
+                <!--
+                <form id="search-tile">
+                    <input type="text">
+                    <button type="submit">Search</button>
+                </form>
+                -->
+            </div>
+        </div>
 
-    <!--Contains All Content Tiles-->
-    <div class="content">
-        {% block content %}{% endblock %}
-    </div>
+        <!--Contains All Content Tiles-->
+        <div class="content">
+            <!-- Side navigation content -->
+            <div class="side-nav">
+                {% block sidenav %}{% endblock %}
+            </div>
+            <!-- Main content section -->
+            <div class="topics">
+                {% block content %}{% endblock %}
 
-    <footer></footer>
+                <div class="footer-tile">
+                    <!--
+                    <footer class="footer" id="foot">
+                        <div class="info" id="about">About</div>
+                        <div class="info" id="contact">Contact</div>
+                        <div class="info" id="resources">Resources</div>
+                    </footer>
+                    -->
+                </div>
+            </div>
+            <!-- Extra content section-->
+            <div class="extras">
+                {% block extras %}{% endblock %}
+            </div>
+        </div>
 
-    <script src="{{ url_for('static', filename='js/base.js') }}" defer></script>
-</body>
+        <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+    </body>
 
 </html>

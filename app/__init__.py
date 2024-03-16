@@ -1,9 +1,21 @@
-from flask import Flask
+from flask import Flask, render_template
 # Impport need libraries
 # from flask_sqlalchemy import SQLAlchemy
+import os, logging
 
 # Globally accessible libraries
 # db = SQLAlchemy()
+
+PATH = os.path.dirname(os.path.abspath(__file__))
+
+# Configure the logging object
+logging.basicConfig(
+    filename=os.path.join(PATH, '../logs/app.log'),
+    level=logging.INFO,
+    format='%(asctime)s [%(levelname)s]: %(message)s'
+)
+
+LOGGER = logging.getLogger(__name__)
 
 def init_app():
     '''
@@ -18,16 +30,23 @@ def init_app():
     # Configured for development
     app.config.from_object('config.DevConfig')
 
+    # Custom page not found
+    def page_not_found(error):
+        return render_template('404.html'), 404
+
     # NOTE: Initialize Plugins here
     #db.init_app(app)
 
     with app.app_context():
         # NOTE: Include routes and custom modules here
-        from . import routes
         from . import utils
 
         # NOTE: Register any blueprints here
-        #app.register_blueprint(auth.auth_bp)
-        #app.register_blueprint(admin.admin_bp)
+        from app.main import bp as main_bp
+        from app.users import bp as users_bp
+
+        app.register_blueprint(main_bp)
+        app.register_blueprint(users_bp, url_prefix='/users')
+        app.register_error_handler(404, page_not_found)
 
     return app

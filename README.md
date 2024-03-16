@@ -1,6 +1,6 @@
 # flask_template
 
-This is a template for starting web projects power by flask.
+This is a template for starting web projects powered by flask.
 
 ## Getting Started
 
