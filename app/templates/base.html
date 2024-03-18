@@ -18,14 +18,14 @@
             <div id="nav-bar">
                 <ul class="nav">
                     <li><a href="{{  url_for('main.index')  }}" class="dropbtn nav-tile {% if nav_id == 'home-page' %}active{% endif %}">Home</a></li>
-                    <li><div class="{% if nav_id == 'users-page' %}active{% endif %}">
+                    <li><div class="{% if nav_id == 'manage-page' %}active{% endif %}">
                         <!--User Sub Navigation-->
-                        <div class="dropbtn nav-tile">Users</div>
+                        <div class="dropbtn nav-tile">Manage</div>
                         <div class="dropdown-element" style="display: none;">
                             <!-- ADD USER ELEMENTS HERE -->
-                            <a class="drop-link" href="{{  url_for('users.index')  }}">User Page 1</a>
-                            <a class="drop-link" href="{{  url_for('users.index')  }}">User Page 2</a>
-                            <a class="drop-link" href="{{  url_for('users.index')  }}">User Page 3</a>
+                            <a class="drop-link" href="{{  url_for('manage.index')  }}">Manage Page 1</a>
+                            <a class="drop-link" href="{{  url_for('manage.index')  }}">Manage Page 2</a>
+                            <a class="drop-link" href="{{  url_for('manage.index')  }}">Manage Page 3</a>
                         </div>
                     </div></li>
                 </ul>

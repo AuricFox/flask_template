@@ -97,7 +97,76 @@ application or website.
 
 - **wsgi.py**: A mediator between the web server and Python web application. Runs the overall application.
 
-## Resources
+## Models
+
+Creating Database Models
+
+### Data Type(s):
+
+- **Integer**: integer column
+- **String**: string column with fixed length
+- **Text**: string column with variable length
+- **Boolean**: boolean column
+- **Float**: floating point column
+- **Numeric**: numeric column with fixed-point precision
+- **DateTime**: datetime column
+- **Date**: date column
+- **Time**: time column
+- **Interval**: time interval column
+- **JSON**: JSON column (support limited)
+- **Enum**: enumerated values column
+
+### Parameter(s):
+- **primary_key (bool)**: indicates the variable is a primary key
+- **nullable (bool)**: indicates if the value can be null or not
+- **length (int)**: length of a string column
+- **precision (int)**: total number of digits that can be stored in a column (before and after the decimal point)
+- **scale (int)**: number of digits that can be store to the right of the decimal point
+- **unique (bool)**: states whether a column must have unique values
+- **default (int)**: specifies a default value for a column
+- **autoincrement (bool)**: specifies whether a column should auto-increment its vlaue
+- **index (bool)**: indecates wheater a index should be created for the column
+- **Check (function)**: checks contraint for the column's values
+- **server_deault (str)**: specifies a server-side default value for the column
+
+Example:
+```
+class Example(db.Model):
+    id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+    name = db.Column(db.String(50), nullable=False, db.CheckConstraint('length(name) > 0'))
+    cost = db.Column(db.Numeric(precision=10, scale=2))
+    code = db.Column(db.String(50), unique=True)
+    score = db.Column(db.Integer, default=0)
+```
+
+### Creating Tables
+
+The tables have not yet been added to the database and need to be created.
+
+1. Open the Flask shell to create a table:  
+```
+(env) flask shell
+```
+
+2. Run the folling code to create the table:  
+```
+>>> from app.extensions import db
+>>> from app.models.models import Models
+>>> db.create_all()
+```
+
+3. To Update or Delete tables:
+```
+>>> db.drop_all()
+>>> db.create_all()
+```
+
+4. Run the following code to exit:  
+```
+>>> exit()
+```
+
+## Helpful Resources
 - [How To Structure a Large Flask Application with Flask Blueprints and Flask-SQLAlchemy](https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy)
 - [Demystifying Flask’s “Application Factory”](https://hackersandslackers.com/flask-application-factory/)  
 - [User Session Data with Flask-Session & Redis](https://hackersandslackers.com/flask-user-sessions-and-redis/)  

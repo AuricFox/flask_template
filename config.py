@@ -36,8 +36,9 @@ class Config:
     TEMPLATES_FOLDER = 'templates'
 
     # Database
-    #SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI')
-    #SQLALCHEMY_TRACK_MODIFICATIONS = False
+    SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI')\
+        or 'sqlite:///' + path.join(BASEDIR, './data/app.db')
+    SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # AWS Secrets
     #AWS_SECRET_KEY = environ.get('AWS_SECRET_KEY')

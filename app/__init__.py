@@ -1,10 +1,9 @@
 from flask import Flask, render_template
-# Impport need libraries
-# from flask_sqlalchemy import SQLAlchemy
 import os, logging
 
-# Globally accessible libraries
-# db = SQLAlchemy()
+# Import extension for managing database
+from app.extensions import db
+
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -35,7 +34,7 @@ def init_app():
         return render_template('404.html'), 404
 
     # NOTE: Initialize Plugins here
-    #db.init_app(app)
+    db.init_app(app)
 
     with app.app_context():
         # NOTE: Include routes and custom modules here
@@ -43,10 +42,10 @@ def init_app():
 
         # NOTE: Register any blueprints here
         from app.main import bp as main_bp
-        from app.users import bp as users_bp
+        from app.manage import bp as manage_bp
 
         app.register_blueprint(main_bp)
-        app.register_blueprint(users_bp, url_prefix='/users')
+        app.register_blueprint(manage_bp, url_prefix='/manage')
         app.register_error_handler(404, page_not_found)
 
     return app

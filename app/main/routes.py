@@ -20,7 +20,7 @@ def index():
     return render_template('index.html', nav_id="home-page")
 
 # Accessing other pages
-@bp.route("/users")
+@bp.route("/manage")
 def users():
     '''
     Processes user page
@@ -30,4 +30,4 @@ def users():
     Output(s):
         A rendered HTML user page
     '''
-    return render_template('users.html', nav_id="users-page")
+    return render_template('manage.html', nav_id="manage-page")

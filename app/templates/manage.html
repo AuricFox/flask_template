@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}Users{% endblock %}
+{% block title %}Manage{% endblock %}
 
 
 {% block content %}
 
 <div class="topic">
-    <div class="title">Welcome to the Users Page</div>
+    <div class="title">Welcome to the Manage Page</div>
     <div class="description" id="tutorial-description">
         This is a defualt page that you can change and add whatever you want. You can even create more topic containers.
     </div>
     <div class="link-list">
-        <a class="link" href="{{  url_for('users.index')  }}">User 1</a>
-        <a class="link" href="{{  url_for('users.index')  }}">User 2</a>
+        <a class="link" href="{{  url_for('manage.index')  }}">User 1</a>
+        <a class="link" href="{{  url_for('manage.index')  }}">User 2</a>
         <a class="link" href="#">General</a>
     </div>
 </div>
