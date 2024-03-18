@@ -1,6 +1,7 @@
-# flask_template
+# Flask Template
 
-This is a template for starting web projects powered by flask.
+This is a template for starting web projects powered by flask. It provides basic navigation for the main pages, sub pages, and a side bar 
+for related topics.
 
 ## Getting Started
 
@@ -36,6 +37,42 @@ To get started, follow these steps:
     ```
 
     The server will start running, and you can access the application by navigating to `http://localhost:5000` in your web browser.
+
+## File Structure
+
+```
+.
+|-- flask_app
+    |-- app
+    |   |-- utils.py
+    |   |-- __init__.py
+    |   |-- main
+    |   |   |-- __init__.py
+    |   |   |-- routes.py
+    |   |-- users
+    |   |   |-- __init__.py
+    |   |   |-- routes.py
+    |   |-- static
+    |   |   |-- css
+    |   |   |   |---base.css
+    |   |   |-- images
+    |   |   |-- js
+    |   |   |   |-- base.js
+    |   |-- templates
+    |       |-- 404.html
+    |       |-- base.html
+    |       |-- index.html
+    |       |-- users.html
+    |-- data
+    |   |-- database.db
+    |-- logs
+    |   |-- app.logs
+    |-- .gitignore
+    |-- config.py
+    |-- wsgi.py
+    |-- README.md
+    |-- LICENSE
+```
 
 ## Resources
 
