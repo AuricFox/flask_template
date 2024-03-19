@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}View{% endblock %}
+
+{% block content %}
+
+<div class="topic">
+    <div class="flashcard-content-inner">
+        <h2>Name</h2>
+        <p>{{ data.name | escape }}</p>
+    </div>
+    <div class="flashcard-content-inner">
+        <h2>Date</h2>
+        <p>{{ data.date | escape }}</p>
+    </div>
+    <div class="flashcard-content-inner">
+        <h2>Message</h2>
+        <p>{{ data.message | escape }}</p>
+    </div>
+
+    <a class="edit-btn view-btn" href="{{ url_for('manage.edit', key=data.key) | escape }}">
+        Edit Info
+    </a>
+</div>
+
+{% endblock %}

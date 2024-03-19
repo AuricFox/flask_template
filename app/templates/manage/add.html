@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Add{% endblock %}
+
+{% block content %}
+
+<div class="topic">
+    <form action="{{ url_for('manage.add_info') }}" method="post" enctype="multipart/form-data">
+        <div class="flashcard-content-inner">
+            <h2>Name</h2>
+            <input class="search" id="name" name="name" rows="4" placeholder="Name ...">
+        </div>
+        <div class="flashcard-content-inner">
+            <h2>Date</h2>
+            <input id="date" name="date" rows="4">
+        </div>
+        <div class="flashcard-content-inner">
+            <h2>Message</h2>
+            <textarea id="message" name="message" rows="4" placeholder="Message ..."></textarea>
+        </div>
+
+        <button class="edit-btn" type="submit">Add Info</button>
+    </form>
+</div>
+
+{% endblock %}

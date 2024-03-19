@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Edit{% endblock %}
+
+{% block content %}
+
+<div class="topic">
+    <form action="{{ url_for('manage.update', key=data.key) }}" method="post" enctype="multipart/form-data">
+        <div class="flashcard-content-inner">
+            <h2>Name</h2>
+            <input class="search" id="name" name="name" rows="4" value="{{ data.name | escape }}">
+        </div>
+        <div class="flashcard-content-inner">
+            <h2>Date</h2>
+            <input id="date" name="date" rows="4">{{ data.date | escape }}</input>
+        </div>
+        <div class="flashcard-content-inner">
+            <h2>Message</h2>
+            <textarea id="message" name="message" rows="4">{{ data.message | escape }}</textarea>
+        </div>
+
+        <button class="edit-btn" type="submit">Update Info</button>
+    </form>
+</div>
+
+{% endblock %}

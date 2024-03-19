@@ -30,4 +30,4 @@ def users():
     Output(s):
         A rendered HTML user page
     '''
-    return render_template('manage.html', nav_id="manage-page")
+    return render_template('./manage/manage.html', nav_id="manage-page")
