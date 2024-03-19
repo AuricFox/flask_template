@@ -8,13 +8,49 @@
 <div class="topic">
     <div class="title">Welcome to the Manage Page</div>
     <div class="description" id="tutorial-description">
-        This is a defualt page that you can change and add whatever you want. You can even create more topic containers.
+        This is a defualt page used to manage the current database setup.
     </div>
-    <div class="link-list">
-        <a class="link" href="{{  url_for('manage.index')  }}">User 1</a>
-        <a class="link" href="{{  url_for('manage.index')  }}">User 2</a>
-        <a class="link" href="#">General</a>
-    </div>
+</div>
+
+<div class="info-table">
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Date</th>
+                <th>Message</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td class="info-cell">{{ row.id | escape }}</td>
+                <td class="info-cell">{{ row.name | escape }}</td>
+                <td class="info-cell">{{ row.date | escape }}</td>
+                <td class="info-cell">{{ row.message | escape }}</td>
+                
+                <td class="action-cells">
+                    <div class="action-links">
+                        <a class="action-cell view-cell" href="{{ url_for('manage.view', key=row.key) | escape }}">
+                            <img class="icon-button" src="{{ url_for('static', filename='images/icons/view.png') }}"
+                                alt="view">
+                        </a>
+                        <a class="action-cell edit-cell" href="{{ url_for('manage.edit', key=row.key) | escape }}">
+                            <img class="icon-button" src="{{ url_for('static', filename='images/icons/edit.png') }}"
+                                alt="edit">
+                        </a>
+                        <a class="action-cell delete-cell" href="#" data-question="{{ row.key | escape }}">
+                            <img class="icon-button" src="{{ url_for('static', filename='images/icons/delete.png') }}"
+                                alt="delete">
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 {% endblock %}

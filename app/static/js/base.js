@@ -28,3 +28,23 @@ $('.dropbtn').click(function (event) {
         }
     });
 });
+
+// ======================================================================================================
+// MANAGE FLASHCARD PAGE
+// ======================================================================================================
+// Confirm deletion of the queried question before deleting it
+document.querySelectorAll('.delete-cell').forEach(function (element) {
+    element.addEventListener('click', function () {
+        confirmDelete(element.dataset.question);
+    });
+});
+
+// Display window prompt
+function confirmDelete(element) {
+    var question = element;
+    var result = confirm("Are you sure you want to delete this flashcard?");
+    if (result) {
+        window.location.href = "manage.delete" + encodeURIComponent(question);
+    }
+};
+
