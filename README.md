@@ -40,43 +40,52 @@ To get started, follow these steps:
 
 ## File Structure
 
+NOTE: All non-relavent files like `__pycache__` and env files have been removed from the file tree. Image files 
+have also been removed to reduce clutter.
+
 ```
 .
-|-- flask_app
-    |-- app
-    |   |-- main
-    |   |   |-- __init__.py
-    |   |   |-- routes.py
-    |   |-- manage
-    |   |   |-- __init__.py
-    |   |   |-- routes.py
-    |   |-- models
-    |   |   |-- models.py
-    |   |-- static
-    |   |   |-- css
-    |   |   |   |---base.css
-    |   |   |-- images
-    |   |   |   |-- icons
-    |   |   |       |-- ..
-    |   |   |-- js
-    |   |       |-- base.js
-    |   |-- templates
-    |   |   |-- 404.html
-    |   |   |-- base.html
-    |   |   |-- index.html
-    |   |   |-- manage.html
-    |   |-- __init__.py
-    |   |-- extensions.py
-    |   |-- utils.py
-    |-- data
-    |   |-- app.db
-    |-- logs
-    |   |-- app.logs
-    |-- .gitignore
-    |-- config.py
-    |-- wsgi.py
-    |-- README.md
-    |-- LICENSE
+flask_template
+├───app
+│   ├───main
+│   │   ├───__init__.py
+|   |   └───routes.py
+│   ├───manage
+│   │   ├───__init__.py
+|   |   └───routes.py
+│   ├───models
+│   │   └───models.py
+│   ├───static
+│   │   ├───css
+|   |   |   └───base.css
+│   │   ├───images
+│   │   │   └───icons
+|   |   |       └───...
+│   │   └───js
+|   |       └───base.js
+│   ├───templates
+│   |    ├───manage
+|   |    |   ├───add.html
+|   |    |   ├───edit.html
+|   |    |   ├───manage.html
+|   |    |   └───view.html
+|   |    ├───404.html
+|   |    ├───base.html
+|   |    └───index.html
+|   ├───__init__.py
+|   ├───extensions.py
+|   └───utils.py
+├───data
+|   └───app.db
+├───env
+│   └───...
+├───logs
+|   └───app.log
+├───.gitignore
+├───config.py
+├───LICENSE
+├───README.md
+└───wsgi.py
 ```
 
 ## Directories
