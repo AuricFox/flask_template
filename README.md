@@ -44,26 +44,30 @@ To get started, follow these steps:
 .
 |-- flask_app
     |-- app
-    |   |-- utils.py
-    |   |-- __init__.py
     |   |-- main
     |   |   |-- __init__.py
     |   |   |-- routes.py
-    |   |-- models
-    |   |-- users
+    |   |-- manage
     |   |   |-- __init__.py
     |   |   |-- routes.py
+    |   |-- models
+    |   |   |-- models.py
     |   |-- static
     |   |   |-- css
     |   |   |   |---base.css
     |   |   |-- images
+    |   |   |   |-- icons
+    |   |   |       |-- ..
     |   |   |-- js
-    |   |   |   |-- base.js
+    |   |       |-- base.js
     |   |-- templates
-    |       |-- 404.html
-    |       |-- base.html
-    |       |-- index.html
-    |       |-- users.html
+    |   |   |-- 404.html
+    |   |   |-- base.html
+    |   |   |-- index.html
+    |   |   |-- manage.html
+    |   |-- __init__.py
+    |   |-- extensions.py
+    |   |-- utils.py
     |-- data
     |   |-- app.db
     |-- logs
@@ -96,6 +100,8 @@ application or website.
 - **config.py**: Configuration file for the Flask application that manages the settings. It configures the `secret key`, `SQLAlchemy database URI`, and more.
 
 - **wsgi.py**: A mediator between the web server and Python web application. Runs the overall application.
+
+- **extensions.py**: Manages the flask extensions like SQLAlchemy.
 
 ## Models
 
