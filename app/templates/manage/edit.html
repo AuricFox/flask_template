@@ -3,24 +3,19 @@
 {% block title %}Edit{% endblock %}
 
 {% block content %}
-
-<div class="topic">
-    <form action="{{ url_for('manage.update_info', id=data.id) }}" method="post" enctype="multipart/form-data">
-        <div class="flashcard-content-inner">
-            <h2>Name</h2>
-            <input class="search" id="name" name="name" rows="4" value="{{ data.name | escape }}">
-        </div>
-        <div class="flashcard-content-inner">
-            <h2>Date</h2>
-            <inputt type="date" id="date" name="date" rows="4">{{ data.date | escape }}</input>
-        </div>
-        <div class="flashcard-content-inner">
-            <h2>Message</h2>
-            <textarea id="message" name="message" rows="4">{{ data.message | escape }}</textarea>
-        </div>
-
-        <button class="edit-btn" type="submit">Update Info</button>
-    </form>
-</div>
-
+<form class="record-form shadow" action="{{ url_for('manage.update_info', id=data.id) }}" method="post" enctype="multipart/form-data">
+    <div class="topic">
+        <div class="title center-txt">Name</div>
+        <input class="search" id="name" name="name" rows="4" value="{{ data.name | escape }}">
+    </div>
+    <div class="topic">
+        <div class="title center-txt">Date</div>
+        <input type="date" id="date" name="date" rows="4" value="{{ data.date | escape }}">
+    </div>
+    <div class="topic">
+        <div class="title center-txt">Message</div>
+        <textarea id="message" name="message" rows="4">{{ data.message | escape }}</textarea>
+    </div>
+    <button class="link center" type="submit">Update Info</button>
+</form>
 {% endblock %}

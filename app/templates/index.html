@@ -5,22 +5,23 @@
 
 {% block content %}
 
-<div class="topic">
-    <div class="title">Welcome to the Home Page</div>
-    <div class="description" id="tutorial-description">
-        Add your main links and information to this page.
+<div class="topic shadow">
+    <div class="title center-txt">Welcome to the Home Page</div>
+    <div class="description center-txt" id="tutorial-description">
+        This is the main page where you can add links to help the user navigate your website. You can also display useful info that keeps 
+        the user informed about certain topics the website covers.
     </div>
 </div>
 
-<div class="topic">
-    <div class="title">Users</div>
-    <div class="description" id="tutorial-description">
-        This is a defualt tile that you can change and add whatever you want. You can even create more topic containers.
+<div class="topic shadow">
+    <div class="title center-txt">Link Example</div>
+    <div class="description center-txt" id="tutorial-description">
+        This is a basic example of how you can structure links in you website.
     </div>
     <div class="link-list">
-        <a class="link" href="{{  url_for('manage.index')  }}">User 1</a>
-        <a class="link" href="{{  url_for('manage.index')  }}">User 2</a>
-        <a class="link" href="#">General</a>
+        <a class="link center-txt" href="{{  url_for('main.index')  }}">Link 1</a>
+        <a class="link center-txt" href="{{  url_for('main.index')  }}">Link 2</a>
+        <a class="link center-txt" href="{{  url_for('main.index')  }}">Link 3</a>
     </div>
 </div>
 

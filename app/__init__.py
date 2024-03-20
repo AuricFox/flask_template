@@ -28,7 +28,6 @@ def init_app():
     app = Flask(__name__, instance_relative_config=False)
     # Configured for development
     app.config.from_object('config.DevConfig')
-    print("SECRET_KEY:", app.config['SECRET_KEY'])
 
     # Custom page not found
     def page_not_found(error):
@@ -38,10 +37,10 @@ def init_app():
     db.init_app(app)
 
     with app.app_context():
-        # NOTE: Include routes and custom modules here
+        # NOTE: Include custom modules here
         from . import utils
 
-        # NOTE: Register any blueprints here
+        # NOTE: Import and register any blueprints here
         from app.main import bp as main_bp
         from app.manage import bp as manage_bp
 

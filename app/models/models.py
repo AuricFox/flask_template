@@ -4,6 +4,9 @@ Creating Database Models
 from app.extensions import db
 
 class Models(db.Model):
+    '''
+    Default model for the current database
+    '''
     __tablename__ = 'Models'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)

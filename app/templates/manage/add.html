@@ -3,24 +3,19 @@
 {% block title %}Add{% endblock %}
 
 {% block content %}
-
-<div class="topics">
-    <form action="{{ url_for('manage.add_info') }}" method="post" enctype="multipart/form-data">
-        <div class="topic">
-            <div class="title left-txt">Name</div>
-            <input id="name" name="name" rows="4" placeholder="Name ...">
-        </div>
-        <div class="topic">
-            <div class="title left-txt">Date</div>
-            <input type="date" id="date" name="date" rows="4">
-        </div>
-        <div class="topic">
-            <div class="title left-txt">Message</div>
-            <textarea id="message" name="message" rows="4" placeholder="Message ..."></textarea>
-        </div>
-
-        <button class="link center" type="submit">Add Info</button>
-    </form>
-</div>
-
+<form class="record-form shadow" action="{{ url_for('manage.add_info') }}" method="post" enctype="multipart/form-data">
+    <div class="topic">
+        <div class="title center-txt">Name</div>
+        <input id="name" name="name" rows="4" placeholder="Name ...">
+    </div>
+    <div class="topic">
+        <div class="title center-txt">Date</div>
+        <input type="date" id="date" name="date" rows="4">
+    </div>
+    <div class="topic">
+        <div class="title center-txt">Message</div>
+        <textarea id="message" name="message" rows="4" placeholder="Message ..."></textarea>
+    </div>
+    <button class="link center" type="submit">Add Info</button>
+</form>
 {% endblock %}
