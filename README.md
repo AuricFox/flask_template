@@ -38,13 +38,13 @@ To get started, follow these steps:
 
     The server will start running, and you can access the application by navigating to `http://localhost:5000` in your web browser.
 
-6. **Export Secret Key:**
+6. **Export Secret Key:**  
     Note: Use `set` for windows and `export` for macOS.
     ```
     (env) set SECRET_KEY="your secret key"
     ```
 
-7. **Export Database URI:**
+7. **Export Database URI:**  
     Note: Use `set` for windows and `export` for macOS.
     ```
     (env) set DATABASE_URI="postgresql://username:password@host:port/database_name"
@@ -171,26 +171,24 @@ class Example(db.Model):
 The tables have not yet been added to the database and need to be created.
 
 1. Open the Flask shell to create a table:  
-```
-(env) flask shell
-```
+<code>(env) <span style="user-select: none;">flask shell</span></code>
 
 2. Run the folling code to create the table:  
 ```
->>> from app.extensions import db
->>> from app.models.models import Models
->>> db.create_all()
+from app.extensions import db
+from app.models.models import Models
+db.create_all()
 ```
 
 3. To Update or Delete tables:
 ```
->>> db.drop_all()
->>> db.create_all()
+db.drop_all()
+db.create_all()
 ```
 
 4. Run the following code to exit:  
 ```
->>> exit()
+exit()
 ```
 
 ## Helpful Resources
