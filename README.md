@@ -171,7 +171,9 @@ class Example(db.Model):
 The tables have not yet been added to the database and need to be created.
 
 1. Open the Flask shell to create a table:  
-<code>(env) <span style="user-select: none;">flask shell</span></code>
+``
+(env) `flask shell`
+``
 
 2. Run the folling code to create the table:  
 ```
