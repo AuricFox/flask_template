@@ -52,6 +52,14 @@ To get started, follow these steps:
     set SECRET_KEY="your secret key"
     ```
 
+    Check if the Secret Key was set:
+    ```
+    echo %SECRET_KEY%  # Windows
+    ```
+    ```
+    echo $SECRET_KEY   # Unix-like
+    ```
+
 7. **Export Database URI:**  
     Note: Use `set` for windows and `export` for macOS.
     ```

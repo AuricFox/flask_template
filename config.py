@@ -21,17 +21,15 @@ https://flask.palletsprojects.com/en/3.0.x/config/
 '''
 
 from os import environ, path
-from dotenv import load_dotenv
 
 BASEDIR = path.abspath(path.dirname(__file__))
-load_dotenv(path.join(BASEDIR, '.env'))
 
 class Config:
     '''
     Base config
     '''
-    SECRET_KEY = environ.get('SECRET_KEY')
-    SESSION_COOKIE_NAME = environ.get('SESSION_COOKIE_NAME')
+    SECRET_KEY = 'df0331cefc6c2b9a5dserknvwier726a5d1c0fd37324feba25506'
+    #SESSION_COOKIE_NAME = environ.get('SESSION_COOKIE_NAME')
     STATIC_FOLDER = 'static'
     TEMPLATES_FOLDER = 'templates'
 

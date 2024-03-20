@@ -171,6 +171,6 @@ def delete(id):
             flash("Failed to delete record", "error")
     
     except Exception as e:
-        LOGGER.error(f'An Error occured when deleting the flashcard: {str(e)}')
+        LOGGER.error(f'An Error occured when deleting the record: {str(e)}')
     
     return redirect(url_for('manage.index'))
