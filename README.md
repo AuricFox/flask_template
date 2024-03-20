@@ -17,23 +17,31 @@ To get started, follow these steps:
     cd flask_template
     ```
 
-3. **Setup Environment:**
+3. **Setup Environment:**  
+    Windows:
     ```
     pip install virtualenv  
     virtualenv env
+    .\env\Scripts\activate
+    ```  
 
-    .\env\Scripts\activate      # Windows
-    source env/bin/activate     # Mac OS
+    macOS:
     ```
+    pip install virtualenv  
+    virtualenv env
+    source env/bin/activate
+    ```    
+
+    NOTE: Remaining steps are done in the activated environment.
 
 4. **Install Dependencies:**
     ```
-    (env) pip install flask python-dotenv Flask-SQLAlchemy
+    pip install flask python-dotenv Flask-SQLAlchemy
     ```
 
 5. **Run Server:**
     ```
-    (env) python wsgi.py
+    python wsgi.py
     ```
 
     The server will start running, and you can access the application by navigating to `http://localhost:5000` in your web browser.
@@ -41,13 +49,13 @@ To get started, follow these steps:
 6. **Export Secret Key:**  
     Note: Use `set` for windows and `export` for macOS.
     ```
-    (env) set SECRET_KEY="your secret key"
+    set SECRET_KEY="your secret key"
     ```
 
 7. **Export Database URI:**  
     Note: Use `set` for windows and `export` for macOS.
     ```
-    (env) set DATABASE_URI="postgresql://username:password@host:port/database_name"
+    set DATABASE_URI="postgresql://username:password@host:port/database_name"
     ```
 
 ## File Structure
@@ -171,8 +179,9 @@ class Example(db.Model):
 The tables have not yet been added to the database and need to be created.
 
 1. Open the Flask shell to create a table:  
-``(env) `<span style="user-select: none;">flask shell</span>` ``
-
+```
+flask shell
+```
 
 2. Run the folling code to create the table:  
 ```
