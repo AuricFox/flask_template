@@ -14,8 +14,8 @@ def index():
     return render_template('./manage/manage.html', nav_id="manage-page", data=data)
 
 # ==============================================================================================================
-@bp.route('/view/<key>')
-def view(key):
+@bp.route('/view/<int:id>')
+def view(id):
     '''
     Retrieves the queried data from the database for viewing
 
@@ -26,7 +26,7 @@ def view(key):
         None, redirects to the view page
     '''
     # Get the data upon the first instance of the key
-    data = Models.query.filter_by(id=key).first()
+    data = Models.query.filter_by(id=id).first()
     return render_template('./manage/view.html', nav_id="manage-page", data=data)
 
 # ==============================================================================================================
@@ -81,8 +81,8 @@ def add_info():
     return redirect(url_for('manage.index'))
 
 # ==============================================================================================================
-@bp.route('/edit/<key>', methods=['GET', 'POST'])
-def edit(key):
+@bp.route('/edit/<int:id>', methods=['GET', 'POST'])
+def edit(id):
     '''
     Retrieves the queried data from the database for editing
 
@@ -93,7 +93,7 @@ def edit(key):
         None, redirects to the edit page
     '''
     # Get the data upon the first instance of the key
-    data = Models.query.filter_by(id=key).first()
+    data = Models.query.filter_by(id=id).first()
     return render_template('./manage/edit.html', nav_id="manage-page", data=data)
 
 # ==============================================================================================================
@@ -145,8 +145,8 @@ def update_info(id):
     return redirect(url_for('manage.index'))
 
 # ==============================================================================================================
-@bp.route("/delete/<key>")
-def delete(key):
+@bp.route("/delete/<int:id>")
+def delete(id):
     '''
     Deletes the queried data from the database and redirects to manage page
 
@@ -158,17 +158,19 @@ def delete(key):
     '''
     try:
         # Query database for question and delete it
-        data = Models.query.filter_by(id=key).first()
+        data = Models.query.filter_by(id=id).first()
 
         if data:
             # Delete the row data
             db.session.delete(data)
             db.session.commit()
-            return True  # Return True to indicate successful deletion
+            LOGGER.info(f'Record deleted:\n{data}')
+            flash("Successfully deleted record!", "error")
         else:
-            return False
+            LOGGER.error(f'An error occurred when deleting record: {e}')
+            flash("Failed to delete record", "error")
     
     except Exception as e:
         LOGGER.error(f'An Error occured when deleting the flashcard: {str(e)}')
     
-    return redirect(url_for('./manage/manage.index'))
+    return redirect(url_for('manage.index'))

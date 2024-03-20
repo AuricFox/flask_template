@@ -6,8 +6,8 @@
 {% block content %}
 
 <div class="topic">
-    <div class="title">Welcome to the Manage Page</div>
-    <div class="description" id="tutorial-description">
+    <div class="title center-txt">Welcome to the Manage Page</div>
+    <div class="description center-txt" id="tutorial-description">
         This is a defualt page used to manage the current database setup.
     </div>
 </div>
@@ -16,10 +16,10 @@
     <table>
         <thead>
             <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Date</th>
-                <th>Message</th>
+                <th class="left-txt">ID</th>
+                <th class="left-txt">Name</th>
+                <th class="left-txt">Date</th>
+                <th class="left-txt">Message</th>
                 <th></th>
             </tr>
         </thead>
@@ -33,16 +33,16 @@
                 
                 <td class="action-cells">
                     <div class="action-links">
-                        <a class="action-cell view-cell" href="{{ url_for('manage.view', key=row.key) | escape }}">
-                            <img class="icon-button" src="{{ url_for('static', filename='images/icons/view.png') }}"
+                        <a class="action-cell view-cell" href="{{ url_for('manage.view', id=row.id) | escape }}">
+                            <img class="icon-btn" src="{{ url_for('static', filename='images/icons/view.png') }}"
                                 alt="view">
                         </a>
-                        <a class="action-cell edit-cell" href="{{ url_for('manage.edit', key=row.key) | escape }}">
-                            <img class="icon-button" src="{{ url_for('static', filename='images/icons/edit.png') }}"
+                        <a class="action-cell edit-cell" href="{{ url_for('manage.edit', id=row.id) | escape }}">
+                            <img class="icon-btn" src="{{ url_for('static', filename='images/icons/edit.png') }}"
                                 alt="edit">
                         </a>
-                        <a class="action-cell delete-cell" href="#" data-question="{{ row.key | escape }}">
-                            <img class="icon-button" src="{{ url_for('static', filename='images/icons/delete.png') }}"
+                        <a class="action-cell delete-cell" href="#" data-record="{{ row.id | escape }}">
+                            <img class="icon-btn" src="{{ url_for('static', filename='images/icons/delete.png') }}"
                                 alt="delete">
                         </a>
                     </div>

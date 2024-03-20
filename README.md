@@ -38,6 +38,18 @@ To get started, follow these steps:
 
     The server will start running, and you can access the application by navigating to `http://localhost:5000` in your web browser.
 
+6. **Export Secret Key:**
+    Note: Use `set` for windows and `export` for macOS.
+    ```
+    (env) set SECRET_KEY="your secret key"
+    ```
+
+7. **Export Database URI:**
+    Note: Use `set` for windows and `export` for macOS.
+    ```
+    (env) set DATABASE_URI="postgresql://username:password@host:port/database_name"
+    ```
+
 ## File Structure
 
 NOTE: All non-relavent files like `__pycache__` and env files have been removed from the file tree. Image files 

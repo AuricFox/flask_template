@@ -35,16 +35,16 @@ $('.dropbtn').click(function (event) {
 // Confirm deletion of the queried question before deleting it
 document.querySelectorAll('.delete-cell').forEach(function (element) {
     element.addEventListener('click', function () {
-        confirmDelete(element.dataset.question);
+        confirmDelete(element.dataset.record);
     });
 });
 
 // Display window prompt
 function confirmDelete(element) {
-    var question = element;
-    var result = confirm("Are you sure you want to delete this flashcard?");
+    var record = element;
+    var result = confirm("Are you sure you want to delete this record?");
     if (result) {
-        window.location.href = "manage.delete" + encodeURIComponent(question);
+        window.location.href = "delete/" + encodeURIComponent(record);
     }
 };
 
