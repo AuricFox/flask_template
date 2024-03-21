@@ -29,7 +29,6 @@ class Config:
     Base config
     '''
     SECRET_KEY = 'df0331cefc6c2b9a5dserknvwier726a5d1c0fd37324feba25506'
-    #SESSION_COOKIE_NAME = environ.get('SESSION_COOKIE_NAME')
     STATIC_FOLDER = 'static'
     TEMPLATES_FOLDER = 'templates'
 
@@ -37,6 +36,9 @@ class Config:
     SQLALCHEMY_DATABASE_URI = environ.get('SQLALCHEMY_DATABASE_URI')\
         or 'sqlite:///' + path.join(BASEDIR, './data/app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+
+    # Session Configuration
+    #SESSION_COOKIE_NAME = environ.get('SESSION_COOKIE_NAME')
 
     # AWS Secrets
     #AWS_SECRET_KEY = environ.get('AWS_SECRET_KEY')
