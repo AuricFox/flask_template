@@ -4,7 +4,6 @@ from app.main import bp
 # ====================================================================
 # Main Pages
 # ====================================================================
-
 # Accessing Home page
 @bp.route("/")
 @bp.route("/home")
@@ -19,7 +18,7 @@ def index():
     '''
     return render_template('index.html', nav_id="home-page")
 
-# Accessing other pages
+# Accessing Manage pages
 @bp.route("/manage")
 def users():
     '''
@@ -31,3 +30,18 @@ def users():
         A rendered HTML user page
     '''
     return render_template('./manage/manage.html', nav_id="manage-page")
+
+# ====================================================================
+# Login/Sign up
+# ====================================================================
+@bp.route("/login")
+def login():
+    '''
+    Processes home page
+
+    Parameter(s): None
+
+    Output(s):
+        A rendered HTML home page
+    '''
+    return render_template('login/login.html', nav_id="home-page")

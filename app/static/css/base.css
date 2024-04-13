@@ -363,14 +363,15 @@ body {
 .link {
     color: white;
     background-color: #512da8;
-    border-radius: 4px;
-    padding: 10px;
+    border-radius: 8px;
+    padding: 10px 45px;
     margin: 10px;
     text-decoration: none;
     display: block;
-    font-weight: bolder;
-    box-shadow: 4px 4px 8px #000;
-    width: 12rem;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.7);
+    letter-spacing: 0.5px;
     border: none;
 }
 
