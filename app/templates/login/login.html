@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-<div class="container" id="container">
+<div class="container {% if sign_up %}active-container{% endif %}" id="container">
     <div class="form-container sign-up">
         <form>
             <h1>Create Account</h1>
@@ -45,12 +45,12 @@
             <div class="toggle-panel toggle-left">
                 <h1>Welcome Back!</h1>
                 <p>Enter your personal details to use all of site features</p>
-                <button class="hidden" id="login">Sign In</button>
+                <button class="hidden" id="login" onclick="toggleLogin()">Sign In</button>
             </div>
             <div class="toggle-panel toggle-right">
                 <h1>Welcome!</h1>
                 <p>Register with your personal details to use all of site features</p>
-                <button class="hidden" id="register">Sign Up</button>
+                <button class="hidden" id="register" onclick="toggleLogin()">Sign Up</button>
             </div>
         </div>
     </div>

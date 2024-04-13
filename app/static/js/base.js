@@ -29,9 +29,23 @@ $('.dropbtn').click(function (event) {
     });
 });
 
-// ======================================================================================================
+// ===================================================================
+// Toggles Login and Sign Up elements
+// ===================================================================
+function toggleLogin(){
+    const login = document.getElementsByClassName('active-container');
+    const container = document.getElementById('container');
+
+    if (login){
+        container.classList.toggle("active-container");
+    } else {
+        container.classList.remove("active-container");
+    }
+};
+
+// ===================================================================
 // MANAGE FLASHCARD PAGE
-// ======================================================================================================
+// ===================================================================
 // Confirm deletion of the queried question before deleting it
 document.querySelectorAll('.delete-cell').forEach(function (element) {
     element.addEventListener('click', function () {

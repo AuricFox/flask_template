@@ -37,11 +37,23 @@ def users():
 @bp.route("/login")
 def login():
     '''
-    Processes home page
+    Processes login page
 
     Parameter(s): None
 
     Output(s):
-        A rendered HTML home page
+        A rendered HTML login page
     '''
-    return render_template('login/login.html', nav_id="home-page")
+    return render_template('login/login.html', nav_id="home-page", sign_up=False)
+
+@bp.route("/sign_up")
+def sign_up():
+    '''
+    Configures login page to display signup
+
+    Parameter(s): None
+
+    Output(s):
+        A rendered HTML login page
+    '''
+    return render_template('login/login.html', nav_id="home-page", sign_up=True)
