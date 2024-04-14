@@ -103,7 +103,7 @@ body {
     justify-content: space-around;
     background-color: #FFFFFF;
     box-shadow: 4px 4px 8px #000;
-    z-index: 1;
+    z-index: 5;
     width: 100%;
     position: absolute;
     left: 0;
@@ -204,20 +204,21 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
+}
+
+.main-topics {
+    display: flex;
+    flex-direction: column;
+    width: 95%;
+    align-items: center;
+    justify-content: center;
 }
 
 @media screen and (max-width: 750px) {
-    .side-nav {
-        width: 25%;
-    }
-
-    .topics {
-        width: 75%;
-    }
-
-    .extras {
-        display: none;
-    }
+    .side-nav {width: 25%;}
+    .topics {width: 75%;}
+    .extras {display: none;}
 }
 
 /* ========== Side bar ========== */
@@ -255,11 +256,11 @@ body {
 
 .topic {
     background-color: #FFFFFF;
-    border-radius: 4px;
+    border-radius: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 95%;
+    width: 100%;
     margin: 1rem 0;
     padding: 1rem 0;
 }
@@ -314,8 +315,9 @@ body {
     color: #000;
     font-size: 25px;
     font-family: Arial, sans-serif;
-    font-style: italic;
+    font-style: normal;
     font-weight: bold;
+    letter-spacing: 0.3px;
     padding: 5px;
     width: 100%;
 }
@@ -337,8 +339,8 @@ body {
 
 .sub-topic {
     text-decoration: none;
-    background-color: rgb(255, 255, 255);
-    color: rgb(0, 0, 0);
+    background-color: #FFFFFF;
+    color: #000;
     border-radius: 10px;
     padding: 1rem;
     margin: 1rem;
@@ -384,10 +386,11 @@ body {
 /* ========== Info Table ========== */
 
 .info-table {
-    width: 95%;
-    margin: 1rem 0 1rem 0;
-    padding: 1rem 0 1rem 0;
-    border-radius: 8px;
+    width: 100%;
+    margin: 1rem 0;
+    border: 1px solid #512da8;
+    border-radius: 4px;
+    overflow: hidden;
 }
 
 table {
@@ -483,11 +486,11 @@ tr:last-child td {
 
 .record-form {
     background-color: #FFFFFF;
-    width: 95%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 4px;
+    border-radius: 30px;
     margin-top: 10px;
 }
 
@@ -496,19 +499,22 @@ tr:last-child td {
     flex-direction: column;
     align-items: center;
     width: 95%;
-    
 }
 
-input {
-    width: 100%;
-    font-size: 18px;
-    padding: 2px;
+.form-topic:first-child{
+    margin-top: 8px;
 }
 
-textarea {
+.record-form input,
+.record-form textarea {
+    background-color: #eee;
+    border: none;
+    padding: 10px 15px;
+    font-size: 13px;
+    border-radius: 8px;
     max-width: 100%;
     min-width: 100%;
-    padding: 2px;
+    outline: none;
 }
 
 /* ========== footer ========== */
