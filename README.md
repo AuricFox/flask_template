@@ -85,13 +85,16 @@ flask_template
 │   │   └───models.py
 │   ├───static
 │   │   ├───css
-|   |   |   └───base.css
+|   |   |   ├───base.css
+|   |   |   └───login.css
 │   │   ├───images
 │   │   │   └───icons
 |   |   |       └───...
 │   │   └───js
 |   |       └───base.js
 │   ├───templates
+|   |    ├───login
+|   |    |   └───login.html
 │   |    ├───manage
 |   |    |   ├───add.html
 |   |    |   ├───edit.html
