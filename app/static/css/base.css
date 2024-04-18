@@ -27,7 +27,6 @@
 /* ========== Body ========== */
 
 body {
-    background-color: #212121;
     font-family: 'Times New Roman', Times, serif;
     width: 100%;
     min-height: 100vh;
@@ -224,12 +223,12 @@ body {
 /* ========== Side bar ========== */
 .sidebar {
     position: fixed;
-    height: 85%;
+    height: calc(100% - 46px);
     width: inherit;
     overflow-x: hidden;
     border-radius: 4px;
     direction: rtl;
-    padding: 1rem 0 1rem 0;
+    padding: 1rem 0 3rem 0;
 }
 
 .sidebar span {
