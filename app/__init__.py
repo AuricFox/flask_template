@@ -42,9 +42,13 @@ def init_app():
 
         # NOTE: Import and register any blueprints here
         from app.main import bp as main_bp
+        from app.login import bp as login_bp
+        from app.sign_up import bp as sign_up_bp
         from app.manage import bp as manage_bp
 
         app.register_blueprint(main_bp)
+        app.register_blueprint(login_bp, url_prefix='/login')
+        app.register_blueprint(sign_up_bp, url_prefix='/sign_up')
         app.register_blueprint(manage_bp, url_prefix='/manage')
         app.register_error_handler(404, page_not_found)
 

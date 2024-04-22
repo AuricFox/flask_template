@@ -30,30 +30,3 @@ def users():
         A rendered HTML user page
     '''
     return render_template('./manage/manage.html', nav_id="manage-page")
-
-# ====================================================================
-# Login/Sign up
-# ====================================================================
-@bp.route("/login")
-def login():
-    '''
-    Processes login page
-
-    Parameter(s): None
-
-    Output(s):
-        A rendered HTML login page
-    '''
-    return render_template('login/login.html', nav_id="home-page", sign_up=False)
-
-@bp.route("/sign_up")
-def sign_up():
-    '''
-    Configures login page to display signup
-
-    Parameter(s): None
-
-    Output(s):
-        A rendered HTML login page
-    '''
-    return render_template('login/login.html', nav_id="home-page", sign_up=True)
