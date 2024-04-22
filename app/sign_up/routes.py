@@ -1,4 +1,4 @@
-from flask import render_template
+from flask import request, render_template, redirect, url_for
 from app.sign_up import bp
 
 # ====================================================================
@@ -7,11 +7,20 @@ from app.sign_up import bp
 @bp.route("/")
 def index():
     '''
-    Configures login page to display signup
+    Configures sign up page
 
     Parameter(s): None
 
     Output(s):
-        A rendered HTML login page
+        A rendered HTML sign up page
     '''
-    return render_template('login/login.html', nav_id="home-page", sign_up=True)
+    if request.method == 'GET':
+        return render_template('login/login.html', nav_id="home-page", sign_up=False)
+    
+    elif request.method == 'POST':
+        name = request.form.get('name', type=str)
+        email = request.form.get('email', type=str)
+        password = request.form.get('password', type=str)   # NOTE: Must be encypted immediately
+        
+    else:
+        return redirect(url_for('404'))
