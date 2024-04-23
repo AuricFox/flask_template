@@ -225,6 +225,7 @@ exit()
 - [User Session Data with Flask-Session & Redis](https://hackersandslackers.com/flask-user-sessions-and-redis/)  
 - [Configuring Your Flask App](https://hackersandslackers.com/configure-flask-applications/)  
 - [Configuration Handling](https://flask.palletsprojects.com/en/3.0.x/config/#configuration-handling)
+- [How to Set Up Basic User Authentication in a Flask App](https://www.freecodecamp.org/news/how-to-setup-user-authentication-in-flask/)
 
 ## License
 
