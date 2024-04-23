@@ -3,9 +3,10 @@ Creating Database Models
 '''
 from app.extensions import db, bcrypt
 from datetime import datetime
+from flask_login import UserMixin
 
 # ====================================================================
-class User(db.Model):
+class User(UserMixin, db.Model):
     '''
     Model for user login info
     '''
