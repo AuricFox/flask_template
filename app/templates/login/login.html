@@ -9,7 +9,7 @@
 {% block content %}
 <div class="container {% if sign_up %}active-container{% endif %}" id="container">
     <div class="form-container sign-up">
-        <form action="{{ url_for('sign_up.index') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url_for('auth.index') }}" method="post" enctype="multipart/form-data">
             <h1>Create Account</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
@@ -25,7 +25,7 @@
         </form>
     </div>
     <div class="form-container sign-in">
-        <form action="{{ url_for('login.index') }}" method="post" enctype="multipart/form-data">
+        <form action="{{ url_for('auth.index') }}" method="post" enctype="multipart/form-data">
             <h1>Sign In</h1>
             <div class="social-icons">
                 <a href="#" class="icon"><i class="fa-brands fa-google-plus-g"></i></a>
