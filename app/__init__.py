@@ -1,9 +1,8 @@
 from flask import Flask, render_template
 import os, logging
 
-# Import extension for managing database
-from app.extensions import db
-
+# Import extensions
+from app.extensions import db, login_manager
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -35,6 +34,7 @@ def init_app():
 
     # NOTE: Initialize Plugins here
     db.init_app(app)
+    login_manager.init_app(app)
 
     with app.app_context():
         # NOTE: Include custom modules here
