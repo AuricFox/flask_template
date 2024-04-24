@@ -204,7 +204,7 @@ flask shell
 2. Run the folling code to create the table:  
 ```
 from app.extensions import db
-from app.models.models import Models
+from app.models.models import User, Models
 db.create_all()
 ```
 

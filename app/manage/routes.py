@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect, request, flash
 from app.manage import bp
 from app.extensions import db
-from app.models.models import Models
+from app.models.models import Models, User
 from app.utils import LOGGER, sanitize
 
 from datetime import datetime
@@ -11,7 +11,8 @@ from datetime import datetime
 @bp.route('/')
 def index():
     data = Models.query.all()
-    return render_template('./manage/manage.html', nav_id="manage-page", data=data)
+    users = User.query.all()
+    return render_template('./manage/manage.html', nav_id="manage-page", data=data, users=users)
 
 # ==============================================================================================================
 @bp.route('/view/<int:id>')

@@ -25,16 +25,22 @@ def init_app():
         app (Object): flask application object
     '''
     app = Flask(__name__, instance_relative_config=False)
-    # Configured for development
+    # NOTE: Configured for development
     app.config.from_object('config.DevConfig')
+
+    # NOTE: Initialize Plugins here
+    db.init_app(app)
+    login_manager.login_view = 'auth.login'
+    login_manager.init_app(app)
 
     # Custom page not found
     def page_not_found(error):
         return render_template('404.html'), 404
-
-    # NOTE: Initialize Plugins here
-    db.init_app(app)
-    login_manager.init_app(app)
+    
+    from app.models.models import User
+    @login_manager.user_loader
+    def load_user(user_id):
+        return User.query.get(int(user_id))
 
     with app.app_context():
         # NOTE: Include custom modules here
