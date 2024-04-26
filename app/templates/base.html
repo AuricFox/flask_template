@@ -9,6 +9,7 @@
         <title>{% block title %}{% endblock %}</title>
         <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/base.css') }}">
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         {% block head %}{% endblock %}
     </head>
 
@@ -28,8 +29,17 @@
                         <a class="drop-link" href="{{  url_for('main.index')  }}">Link 3</a>
                     </div>
                 </div></li>
-                
             </ul>
+            <div class="search-container">
+                <form class="category-search" action="#" method="#">
+                    <div class="search-wrapper">
+                        <input type="text" class="search" id="search" name="search" placeholder="Search . . ." autocomplete="off">
+                        <button class="search-btn" type="submit">
+                            <img class="search-image" src="{{ url_for('static', filename='images/icons/search.png') }}">
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
        
         <!--Contains All Content Tiles-->

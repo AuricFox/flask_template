@@ -143,9 +143,9 @@ body {
     cursor: pointer;
 }
 
-/* ========== login tile ========== */
+/* ========== Search tile ========== */
 
-.login-tile {
+.search-container {
     margin: 5px 1rem 5px auto;
     display: flex;
     justify-content: center;
@@ -154,37 +154,63 @@ body {
     position: relative;
 }
 
-.login-link, .signup-link{
-    display: block;
+.search-wrapper {
     position: relative;
+    display: flex;
+    align-items: center;
+}
+
+#search {
+    border: none;
+    border-radius: 30px;
     padding: 10px 14px;
     font-size: 15px;
-    font-family: Arial, sans-serif;
     font-weight: bold;
-    text-decoration: none;
-    border-radius: 30px;
+    font-style: italic;
+    background-color: #8b73c2;
     color: #FFFFFF;
-    z-index: 2;
 }
 
-.login-link {
-    background-color: #512da8;
+#search::placeholder {
+    color: #FFFFFF;
 }
 
-.slide-bar {
+.search-btn {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 30%;
-    height: 100%;
-    border-radius: 30px;
-    background-color: #512da8;
-    transition: width 0.3s ease;
-    z-index: 1;
+    right: 0;
+    background-color: inherit;
+    border: none;
+    border-radius: 90px;
+    padding: 8px 12px;
 }
 
-.signup-link:hover~.slide-bar {
-    width: 100%;
+.search-image {
+    max-height: 1.2rem;
+    background-color: inherit;
+}
+
+.search-btn:hover {
+    background-color: #512da8;
+    cursor: pointer;
+}
+
+.ui-autocomplete {
+    max-width: 250px;
+    max-height: 200px;
+    overflow-y: auto;
+    border: none;
+    background-color: #8b73c2;
+    color: #FFFFFF;
+    border-radius: 4px;
+}
+
+.ui-menu-item {
+    padding: 5px;
+}
+
+.ui-menu-item:hover {
+    cursor: pointer;
+    background-color: #512da8;
 }
 
 /* ========== content========== */
