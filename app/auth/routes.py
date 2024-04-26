@@ -37,9 +37,10 @@ def login():
     password = request.form.get('password', type=str)
     remember = True if request.form.get('remember') else False
 
-    user = User.query.filter_by(name=name, password=password).first()
+    user = User.query.filter_by(name=name).first()
+
     # Check if the user exists
-    if not user:
+    if not user or not bcrypt.check_password_hash(user.password, password):
         flash('Incorrect username or password!')
         return redirect(url_for('auth.index'))
     

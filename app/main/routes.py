@@ -1,4 +1,5 @@
 from flask import render_template
+from flask_login import login_required, current_user
 from app.main import bp
 
 # ====================================================================
@@ -16,7 +17,7 @@ def index():
     Output(s):
         A rendered HTML home page
     '''
-    return render_template('index.html', nav_id="home-page")
+    return render_template('index.html', nav_id="home-page", username=current_user.name)
 
 # Accessing Manage pages
 @bp.route("/manage")

@@ -36,11 +36,6 @@ def init_app():
     # Custom page not found
     def page_not_found(error):
         return render_template('404.html'), 404
-    
-    from app.models.models import User
-    @login_manager.user_loader
-    def load_user(user_id):
-        return User.query.get(int(user_id))
 
     with app.app_context():
         # NOTE: Include custom modules here
@@ -57,3 +52,18 @@ def init_app():
         app.register_error_handler(404, page_not_found)
 
     return app
+
+# ====================================================================
+from app.models.models import User
+@login_manager.user_loader
+def load_user(user_id):
+    '''
+    Loads creds of logged in user
+
+    Parameter(s):
+        user_id (int): the primary key of the user
+
+    Output(s):
+        The info on the user
+    '''
+    return User.query.get(int(user_id))

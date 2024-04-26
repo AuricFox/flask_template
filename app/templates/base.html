@@ -31,9 +31,13 @@
                 
             </ul>
             <div class="login-tile">
+                {% if username %}
+                    <div class="nav-tile">{{ username }}</div>
+                {% else %}
                 <a class="login-link" href="{{  url_for('auth.index')  }}">Log in</a>
                 <a class="signup-link" href="{{  url_for('auth.index')  }}">Sign up</a>
                 <div class="slide-bar"></div>
+                {% endif %}
             </div>
         </div>
        
