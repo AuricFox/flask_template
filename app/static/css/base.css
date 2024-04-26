@@ -166,11 +166,15 @@ body {
     z-index: 2;
 }
 
+.login-link {
+    background-color: #512da8;
+}
+
 .slide-bar {
     position: absolute;
     top: 0;
     left: 0;
-    width: 50%;
+    width: 30%;
     height: 100%;
     border-radius: 30px;
     background-color: #512da8;

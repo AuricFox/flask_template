@@ -30,13 +30,13 @@
                 </div></li>
                 
             </ul>
-            <div class="login-tile">
+            <div class="login-tile ">
                 {% if username %}
                     <div class="login-link">{{ username }}</div>
                     <a class="signup-link" href="{{ url_for('auth.log_out') }}">Log Out</a>
                 {% else %}
-                    <a class="login-link" href="{{  url_for('auth.index')  }}">Log in</a>
-                    <a class="signup-link" href="{{  url_for('auth.index')  }}">Sign up</a>
+                    <a class="login-link" href="{{  url_for('auth.login')  }}">Log in</a>
+                    <a class="signup-link" href="{{  url_for('auth.sign_up')  }}">Sign up</a>
                 {% endif %}
                 <div class="slide-bar"></div>
             </div>

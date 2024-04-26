@@ -22,7 +22,7 @@ def index():
 # ====================================================================
 # Login/Log Out Routes
 # ====================================================================  
-@bp.route("/login", methods=['POST'])
+@bp.route("/login", methods=['GET','POST'])
 def login():
     '''
     Handles login protocol
@@ -32,7 +32,9 @@ def login():
     Output(s):
         A redirect to a HTML page
     '''
-    
+    if request.method == 'GET':
+        return render_template('login/login.html', nav_id="home-page", sign_up=False)
+
     name = request.form.get('name', type=str)
     password = request.form.get('password', type=str)
     remember = True if request.form.get('remember') else False
@@ -66,7 +68,7 @@ def log_out():
 # ====================================================================
 # Sign Up Route
 # ====================================================================
-@bp.route("/sign_up", methods=['POST'])
+@bp.route("/sign_up", methods=['GET', 'POST'])
 def sign_up():
     '''
     Configures sign up page
@@ -76,6 +78,9 @@ def sign_up():
     Output(s):
         A rendered HTML sign up page
     '''
+    if request.method == 'GET':
+        return render_template('login/login.html', nav_id="home-page", sign_up=True)
+    
     # Get form fields
     name = request.form.get('name', type=str)
     email = request.form.get('email', type=str)
