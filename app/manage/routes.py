@@ -2,7 +2,7 @@ from flask import render_template, url_for, redirect, request, flash
 from app.manage import bp
 from app.extensions import db
 from app.models.models import Models
-from app.app_utils import LOGGER, sanitize, username
+from app.app_utils import LOGGER, sanitize
 
 from datetime import datetime
 
@@ -11,7 +11,7 @@ from datetime import datetime
 @bp.route('/')
 def index():
     data = Models.query.all()
-    return render_template('./manage/manage.html', nav_id="manage-page", data=data, username=username())
+    return render_template('./manage/manage.html', nav_id="manage-page", data=data)
 
 # ==============================================================================================================
 @bp.route('/view/<int:id>')
@@ -27,7 +27,7 @@ def view(id):
     '''
     # Get the data upon the first instance of the key
     data = Models.query.filter_by(id=id).first()
-    return render_template('./manage/view.html', nav_id="manage-page", data=data, username=username())
+    return render_template('./manage/view.html', nav_id="manage-page", data=data)
 
 # ==============================================================================================================
 @bp.route('/add')
@@ -40,7 +40,7 @@ def add():
     Output(s):
         returns add.html page
     '''
-    return render_template('./manage/add.html', nav_id="add-page", username=username())
+    return render_template('./manage/add.html', nav_id="add-page")
 
 # ==============================================================================================================
 @bp.route('/add_info', methods=['POST'])
@@ -94,7 +94,7 @@ def edit(id):
     '''
     # Get the data upon the first instance of the key
     data = Models.query.filter_by(id=id).first()
-    return render_template('./manage/edit.html', nav_id="manage-page", data=data, username=username())
+    return render_template('./manage/edit.html', nav_id="manage-page", data=data)
 
 # ==============================================================================================================
 

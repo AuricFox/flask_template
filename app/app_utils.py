@@ -1,4 +1,3 @@
-from flask_login import current_user
 import logging, os, re, mimetypes
 
 PATH = os.path.dirname(os.path.abspath(__file__))
@@ -73,15 +72,3 @@ def verify_file(file:str):
     except Exception as e:
         LOGGER.error(f"An error occured when validating {file}: {e}")
         return False
-    
-# ========================================================================================================================================
-def username():
-    '''
-    Get the username of the the current user logged in
-    
-    Parameter(s): None
-    
-    Output(s):
-        The name of the user if logged in, else None
-    '''
-    return current_user.name if current_user.is_authenticated else None

@@ -1,6 +1,5 @@
 from flask import render_template
 from app.main import bp
-from app.app_utils import username
 
 # ====================================================================
 # Main Pages
@@ -17,4 +16,4 @@ def index():
     Output(s):
         A rendered HTML home page
     '''
-    return render_template('index.html', nav_id="home-page", username=username())
+    return render_template('index.html', nav_id="home-page")
