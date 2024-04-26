@@ -1,13 +1,11 @@
 from flask import request, render_template, redirect, url_for, flash
-from flask_login import login_user
+from flask_login import login_user, login_required, logout_user
 from app.auth import bp
 
 from app.models.models import User
 from app.extensions import db, bcrypt
-from app.utils import LOGGER
+from app.app_utils import LOGGER
 
-# ====================================================================
-# Login Pages
 # ====================================================================
 @bp.route("/", methods=['GET', 'POST'])
 def index():
@@ -21,6 +19,8 @@ def index():
     '''
     return render_template('login/login.html', nav_id="home-page", sign_up=False)
 
+# ====================================================================
+# Login/Log Out Routes
 # ====================================================================  
 @bp.route("/login", methods=['POST'])
 def login():
@@ -48,7 +48,23 @@ def login():
     return redirect(url_for('main.index'))
 
 # ====================================================================
-# Sign Up Pages
+@bp.route("/log_out")
+@login_required
+def log_out():
+    '''
+    Logs user out of their account
+
+    Parameter(s): 
+        User must be logged in
+
+    Output(s):
+        Redirects to the home page
+    '''
+    logout_user()
+    return redirect(url_for('main.index'))
+
+# ====================================================================
+# Sign Up Route
 # ====================================================================
 @bp.route("/sign_up", methods=['POST'])
 def sign_up():

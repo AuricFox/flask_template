@@ -39,7 +39,7 @@ def init_app():
 
     with app.app_context():
         # NOTE: Include custom modules here
-        from . import utils
+        from . import app_utils
 
         # NOTE: Import and register any blueprints here
         from app.main import bp as main_bp

@@ -2,7 +2,7 @@ from flask import render_template, url_for, redirect, request, flash
 from app.manage import bp
 from app.extensions import db
 from app.models.models import Models, User
-from app.utils import LOGGER, sanitize
+from app.app_utils import LOGGER, sanitize
 
 from datetime import datetime
 

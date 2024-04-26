@@ -1,3 +1,4 @@
+from flask_login import current_user
 import logging, os, re, mimetypes
 
 PATH = os.path.dirname(os.path.abspath(__file__))
@@ -74,47 +75,13 @@ def verify_file(file:str):
         return False
     
 # ========================================================================================================================================
-class Cache:
+def username():
     '''
-    Creates a cache of data to prevent repetitive calls
+    Get the username of the the current user logged in
+    
+    Parameter(s): None
+    
+    Output(s):
+        The name of the user if logged in, else None
     '''
-    def __init__(self):
-        '''
-        Initializes the cache with an empty dictionary
-        '''
-        self.cache = {}
-
-    # ------------------------------------------------------------
-    def update(self, dict1:dict):
-        '''
-        Updates the current cache with new data
-
-        Parameter(s):
-            dict1 (dict): dictionary with new data
-
-        Output(s): None
-        '''
-        self.cache.update(dict1)
-
-    # ------------------------------------------------------------
-    def drop(self, key:str):
-        '''
-        Drops a key element from the cahce
-        
-        Parameter(s):
-            key (str): the key element in the dict being dropped
-
-        Output(s):
-            Raises a keyError if an error occurs, else None
-        '''
-        if key in self.cache:
-            self.cache.pop(key)
-        else:
-            raise KeyError(f"Key '{key}' not found in cache")
-
-    # ------------------------------------------------------------
-    def clear(self):
-        '''
-        Resets the cache to an empty dictionary
-        '''
-        self.cache = {}
+    return current_user.name if current_user.is_authenticated else None
