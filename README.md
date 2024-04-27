@@ -1,7 +1,7 @@
 # Flask Template
 
-This is a template for starting web projects powered by flask. It provides basic navigation for the main pages, sub pages, and a side bar 
-for related topics.
+This is a Flask template used for starting web projects. It provides basic navigation for the main pages, sub pages, and a side bar 
+for related topics. This template also utilizes SQLAlchemy for maintaining a relational database.
 
 ## Getting Started
 
@@ -36,12 +36,9 @@ To get started, follow these steps:
 
 4. **Install Dependencies:**
     ```
-    pip install Flask Flask-Login Flask-Bcrypt FLask-Migrate Flask-SQLAlchemy Flask-Testing python-dotenv
+    pip install Flask Flask-SQLAlchemy Flask-Testing python-dotenv
     ```
     * Flask: a python framework for building web applications.
-    * Flask-Login: provides user session management for Flask such as logging in or out.
-    * Flask-Bcrypt: a Flask extension for bcrypt hashing.
-    * Flask-Migration: an extension that handles SQLAlchemy database migrations.
     * Flask-SQLAlchemy: a Flask extension that simplifies database queries and management.
     * Flask-Testing: an extension that provides unit testing utilities for Flask.
     * Python-Dotenv: allows use of environment variables in python projects.
@@ -92,16 +89,13 @@ flask_template
 │   │   └───models.py
 │   ├───static
 │   │   ├───css
-|   |   |   ├───base.css
-|   |   |   └───login.css
+|   |   |   └───base.css
 │   │   ├───images
 │   │   │   └───icons
 |   |   |       └───...
 │   │   └───js
 |   |       └───base.js
 │   ├───templates
-|   |    ├───login
-|   |    |   └───login.html
 │   |    ├───manage
 |   |    |   ├───add.html
 |   |    |   ├───edit.html
@@ -112,7 +106,7 @@ flask_template
 |   |    └───index.html
 |   ├───__init__.py
 |   ├───extensions.py
-|   └───utils.py
+|   └───app_utils.py
 ├───data
 |   └───app.db
 ├───env
@@ -150,9 +144,7 @@ application or website.
 
 - **extensions.py**: Manages the flask extensions like SQLAlchemy.
 
-## Models
-
-Creating Database Models
+## Models 
 
 ### Data Type(s):
 
@@ -218,6 +210,13 @@ db.create_all()
 ```
 exit()
 ```
+
+### Default Database Model (Models)
+
+|**id**|name   |date   |message |
+|:-----:|:----:|:-----:|:------:|
+
+* Primary Key: id
 
 ## Helpful Resources
 - [How To Structure a Large Flask Application with Flask Blueprints and Flask-SQLAlchemy](https://www.digitalocean.com/community/tutorials/how-to-structure-a-large-flask-application-with-flask-blueprints-and-flask-sqlalchemy)
