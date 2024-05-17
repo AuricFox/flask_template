@@ -187,8 +187,8 @@ body {
 }
 
 .search-image {
-    max-height: 90%;
     background-color: inherit;
+    color: #FFFFFF;
 }
 
 .search-btn:hover {
@@ -476,9 +476,6 @@ tr:last-child td {
     margin: 0 2px;
     border-radius: 4px;
     color: #FFFFFF;
-    width: 1.75rem;
-    min-width: 1.75rem;
-    height: 2rem;
     box-shadow: 1px 1px 4px #000;
 }
 
@@ -512,6 +509,7 @@ tr:last-child td {
 
 .icon-btn {
     width: 100%;
+    padding: 2px 3px;
 }
 
 /* ========== Form Fields ========== */
