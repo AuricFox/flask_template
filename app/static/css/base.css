@@ -96,11 +96,11 @@ body {
     display: none;
     justify-content: space-around;
     background-color: #FFFFFF;
-    box-shadow: 4px 4px 8px #000;
+    box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
     z-index: 5;
-    width: 100%;
+    width: 10rem;
     position: absolute;
-    left: 0;
+    border-radius: 8px;
 }
 
 .dropdown-element-list {

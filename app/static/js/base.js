@@ -3,7 +3,7 @@
 // ===================================================================
 var navDisplay = {
     display: 'flex',
-    flexDirection: 'row'
+    flexDirection: 'column'
 };
 
 $('.dropbtn').click(function (event) {
