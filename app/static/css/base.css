@@ -54,6 +54,17 @@ body {
 
 /* ========== Nav Bar ========== */
 
+#nav-bar {
+    display: flex;
+    flex-direction: row;
+}
+
+.desktop-nav-bar {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+}
+
 .nav-tile {
     display: block;
     position: relative;
@@ -72,23 +83,6 @@ body {
     cursor: pointer;
     background-color: #512da8;
     color: #FFFFFF;
-}
-
-#nav-bar {
-    display: flex;
-    flex-direction: row;
-}
-
-.nav {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
-
-.nav li {
-    display: inline;
-    float: left;
 }
 
 .active {
@@ -247,10 +241,9 @@ body {
     justify-content: center;
 }
 
-@media screen and (max-width: 750px) {
-    .side-nav {width: 25%;}
-    .topics {width: 75%;}
-    .extras {display: none;}
+@media screen and (max-width: 1240px) {
+    .side-nav, .extras {display: none;}
+    .topics {width: 100%;}
 }
 
 /* ========== Side bar ========== */
