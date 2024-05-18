@@ -65,6 +65,23 @@ body {
     overflow: hidden;
 }
 
+.mobile-nav-bar {
+    display: none;
+}
+
+.nav-icon {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    max-width: fit-content;
+}
+
+.nav-icon:hover {
+    cursor: pointer;
+    background: #512da8;
+    color: #FFFFFF;
+}
+
 .nav-tile {
     display: block;
     position: relative;
@@ -95,7 +112,7 @@ body {
 .dropdown-element {
     display: none;
     justify-content: space-around;
-    background-color: #FFFFFF;
+    background-color: #c9d6ff;
     box-shadow: 4px 4px 8px rgba(0,0,0,0.3);
     z-index: 5;
     width: 10rem;
@@ -244,6 +261,11 @@ body {
 @media screen and (max-width: 1240px) {
     .side-nav, .extras {display: none;}
     .topics {width: 100%;}
+    .desktop-nav-bar {display: none;}
+    .mobile-nav-bar {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 /* ========== Side bar ========== */
