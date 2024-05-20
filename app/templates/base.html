@@ -25,15 +25,15 @@
                 <div class="{% if nav_id == 'example-page' %}active{% endif %}">
                     <div class="dropbtn nav-tile">Drop Down Menu</div>
                     <div class="dropdown-element" style="display: none;">
-                        <a class="drop-link" href="{{  url_for('main.index')  }}">Link 1</a>
-                        <a class="drop-link" href="{{  url_for('main.index')  }}">Link 2</a>
-                        <a class="drop-link" href="{{  url_for('main.index')  }}">Link 3</a>
+                        <a class="dropbtn nav-tile" href="{{  url_for('main.index')  }}">Link 1</a>
+                        <a class="dropbtn nav-tile" href="{{  url_for('main.index')  }}">Link 2</a>
+                        <a class="dropbtn nav-tile" href="{{  url_for('main.index')  }}">Link 3</a>
                     </div>
                 </div>
             </nav>
 
             <nav class="mobile-nav-bar">
-                <div class="nav-icon dropbtn">
+                <div class="nav-icon dropbtn nav-tile">
                     <i class="fa-solid fa-list fa-xl"></i>
                 </div>
                 <div class="dropdown-element" style="display: none;">
