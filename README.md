@@ -80,6 +80,8 @@ have also been removed to reduce clutter.
 .
 flask_template
 ├───app
+│   ├───forms
+|   |   └───default_form.py
 │   ├───main
 │   │   ├───__init__.py
 |   |   └───routes.py
@@ -104,13 +106,14 @@ flask_template
 |   |    ├───base.html
 |   |    └───index.html
 |   ├───__init__.py
-|   ├───extensions.py
-|   └───app_utils.py
+|   ├───app_utils.py
+|   └───extensions.py
 ├───data
 |   └───app.db
 ├───env
 │   └───...
 ├───logs
+|   ├───README.md
 |   └───app.log
 ├───.gitignore
 ├───config.py
