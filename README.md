@@ -91,8 +91,6 @@ flask_template
 │   │   ├───css
 |   |   |   └───base.css
 │   │   ├───images
-│   │   │   └───icons
-|   |   |       └───...
 │   │   └───js
 |   |       └───base.js
 │   ├───templates
