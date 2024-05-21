@@ -32,7 +32,7 @@
                         <a class="action-cell view-cell" href="{{ url_for('manage.view', id=row.id) | escape }}">
                             <i class="fa-solid fa-eye icon-btn"></i>
                         </a>
-                        <a class="action-cell edit-cell" href="{{ url_for('manage.edit', id=row.id) | escape }}">
+                        <a class="action-cell edit-cell" href="{{ url_for('manage.update_info', id=row.id) | escape }}">
                             <i class="fa-solid fa-pen-to-square icon-btn"></i>
                         </a>
                         <a class="action-cell delete-cell" href="#" data-record="{{ row.id | escape }}">

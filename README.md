@@ -36,12 +36,13 @@ To get started, follow these steps:
 
 4. **Install Dependencies:**
     ```
-    pip install Flask Flask-SQLAlchemy Flask-Testing python-dotenv
+    pip install Flask Flask-SQLAlchemy FLask-WTF Flask-Testing python-dotenv
     ```
-    * Flask: a python framework for building web applications.
-    * Flask-SQLAlchemy: a Flask extension that simplifies database queries and management.
-    * Flask-Testing: an extension that provides unit testing utilities for Flask.
-    * Python-Dotenv: allows use of environment variables in python projects.
+    * **Flask:** a python framework for building web applications.
+    * **Flask-SQLAlchemy:** a Flask extension that simplifies database queries and management.
+    * **Flask-WTF:** an extension that handles forms and CSRF tokens.
+    * **Flask-Testing:** an extension that provides unit testing utilities for Flask.
+    * **Python-Dotenv:** allows use of environment variables in python projects.
 
 5. **Run Server:**
     ```

@@ -3,6 +3,7 @@ import os, logging
 
 # Import extensions
 from app.extensions import db
+from flask_wtf.csrf import CSRFProtect
 
 PATH = os.path.dirname(os.path.abspath(__file__))
 
@@ -30,6 +31,7 @@ def init_app():
 
     # NOTE: Initialize Plugins here
     db.init_app(app)
+    CSRFProtect(app)
 
     # Custom page not found
     def page_not_found(error):
