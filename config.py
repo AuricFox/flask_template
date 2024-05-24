@@ -57,24 +57,24 @@ class ProdConfig(Config):
     '''
     FLASK_ENV = "production"
     DEBUG = False
-    DATABASE_URI = environ.get('PROD_DATABASE_URI')
 
 
 class DevConfig(Config):
     '''
     Development config
     '''
+    FLASK_ENV = "development"
     DEVELOPMENT = True
     DEBUG = True
-    DATABASE_URI = environ.get('DEV_DATABASE_URI')
 
 
 class TestingConfig(Config):
     '''
     Testing config
     '''
+    FLASK_ENV = "testing"
     TESTING = True
     DEBUG = True
     WTF_CSRF_ENABLED = False
-    DATABASE_URI = environ.get('TEST_DATABASE_URI')\
+    SQLALCHEMY_DATABASE_URI = environ.get('TEST_DATABASE_URI')\
         or 'sqlite:///' + path.join(BASEDIR, './data/app_test.db')
