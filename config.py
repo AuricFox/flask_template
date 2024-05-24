@@ -76,4 +76,5 @@ class TestingConfig(Config):
     TESTING = True
     DEBUG = True
     WTF_CSRF_ENABLED = False
-    DATABASE_URI = environ.get('TEST_DATABASE_URI')
+    DATABASE_URI = environ.get('TEST_DATABASE_URI')\
+        or 'sqlite:///' + path.join(BASEDIR, './data/app_test.db')

@@ -8,12 +8,7 @@ from app.extensions import db
 class BaseTestCase(TestCase):
     def create_app(self):
         # Create and configure the app for testing
-        app = init_app()
-        app.config.update({
-            'TESTING': True,
-            'SQLALCHEMY_DATABASE_URI': 'sqlite:///:memory:',
-            'WTF_CSRF_ENABLED': False,  # Disable CSRF for testing
-        })
+        app = init_app('config.TestingConfig')
         return app
 
     def setUp(self):
