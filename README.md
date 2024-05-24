@@ -44,17 +44,18 @@ To get started, follow these steps:
     * **Flask-Testing:** an extension that provides unit testing utilities for Flask.
     * **Python-Dotenv:** allows use of environment variables in python projects.
 
-5. **Run Server:**
+### Run Server
     ```
     python wsgi.py
     ```
 
     The server will start running, and you can access the application by navigating to `http://localhost:5000` in your web browser.
 
-6. **Export Secret Key:**  
+### Export Secret Key and Database URI
     Note: Use `set` for windows and `export` for macOS.
     ```
     set SECRET_KEY="your secret key"
+    set DATABASE_URI="postgresql://username:password@host:port/database_name"
     ```
 
     Check if the Secret Key was set:
@@ -65,11 +66,16 @@ To get started, follow these steps:
     echo $SECRET_KEY   # Unix-like
     ```
 
-7. **Export Database URI:**  
-    Note: Use `set` for windows and `export` for macOS.
-    ```
-    set DATABASE_URI="postgresql://username:password@host:port/database_name"
-    ```
+## Running Tests
+
+All the test scripts are located it the `tests` directory. They enable you to test the routes, models, and user inputs. To run the tests, 
+execute the following command in the terminal from the base directory:
+
+```
+python commands.py test
+```
+
+You should see all the tests being executed followed by the number of tests run and the status.
 
 ## File Structure
 
@@ -109,13 +115,20 @@ flask_template
 |   ├───app_utils.py
 |   └───extensions.py
 ├───data
+|   ├───app_test.db
 |   └───app.db
 ├───env
 │   └───...
 ├───logs
 |   ├───README.md
 |   └───app.log
+├───tests
+|   ├───__init__.py
+|   ├───base_test.py
+|   ├───README.md
+|   └───test_routes.py
 ├───.gitignore
+├───commands.py
 ├───config.py
 ├───LICENSE
 ├───README.md
@@ -123,6 +136,8 @@ flask_template
 ```
 
 ## Directories
+
+- **forms**: Contains the files for the Flask-WTF forms.
 
 - **models**: Maintians separation of SQLAlchemy models for large applications. As projects grow, more database tables may be added and more models
 will need to be wriiten. Splitting the models into individual files will help with management and maintenance.
@@ -134,6 +149,8 @@ will need to be wriiten. Splitting the models into individual files will help wi
 - **data**: Contains the database and any other possible data management files such as JSON files.
 
 - **logs**: Stores the logging information of the application. Logs info, warnings, and errors as they arise.
+
+- **tests**: Contains the test scripts for running unit testing.
 
 - **other**: Any remaining directories (main, etc.) manages the applications blueprints and routes. These enable the end-user to navigate the 
 application or website.
