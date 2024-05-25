@@ -1,5 +1,3 @@
-import os
-
 from flask_testing import TestCase
 
 from app import init_app

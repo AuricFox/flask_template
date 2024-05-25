@@ -1,4 +1,4 @@
-import getpass, unittest
+import unittest
 from datetime import datetime
 
 from flask.cli import FlaskGroup
