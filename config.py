@@ -32,9 +32,7 @@ class Config:
     TESTING = False
     CSRF_ENABLED = True
     WTF_CSRF_ENABLED = True
-
     SECRET_KEY = 'df0331cefc6c2b9a5dserknvwier726a5d1c0fd37324feba25506'
-
     STATIC_FOLDER = 'static'
     TEMPLATES_FOLDER = 'templates'
 
@@ -56,7 +54,6 @@ class ProdConfig(Config):
     Production config
     '''
     FLASK_ENV = "production"
-    DEBUG = False
 
 
 class DevConfig(Config):
@@ -65,7 +62,6 @@ class DevConfig(Config):
     '''
     FLASK_ENV = "development"
     DEVELOPMENT = True
-    DEBUG = True
 
 
 class TestingConfig(Config):
