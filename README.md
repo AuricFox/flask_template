@@ -3,6 +3,8 @@
 This is a Flask template used for starting web projects. It provides basic navigation for the main pages, sub pages, and a side bar 
 for related topics. This template also utilizes SQLAlchemy for maintaining a relational database.
 
+![Home Page](home_page.jpg "Home Page")
+
 ## Getting Started
 
 To get started, follow these steps:
